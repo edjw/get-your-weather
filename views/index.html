@@ -1,11 +1,12 @@
 {% extends 'layout.html' %}
-{% block head %}{% endblock %}
+{% block head %}
+    <title>Get your weather</title>
+{% endblock %}
 {% block body %}
 
-<button id="getMyWeather">Get my weather</button>
+    <button id="getMyWeather">Get my weather</button>
 
+    <p id="status_text"></p>
 
-<p id="statusText"></p>
-
-<script src="js/getLocation_Redirect.js"></script>
+    <script src="js/get_location_redirect.js"></script>
 {% endblock %}

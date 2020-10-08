@@ -1,5 +1,6 @@
 const getLocation = () => {
-  document.querySelector("p#statusText").innerText = "Getting your weather…";
+  document.querySelector("button#getMyWeather").style.display = "none";
+  document.querySelector("p#status_text").innerText = "Getting your weather…";
 
   try {
     if (navigator.geolocation) {
@@ -8,7 +9,7 @@ const getLocation = () => {
         timeout: 5000,
       });
     } else {
-      document.querySelector("p#statusText").innerText =
+      document.querySelector("p#status_text").innerText =
         "Geolocation is not supported by this browser.";
     }
   } catch (error) {
@@ -20,7 +21,7 @@ const handleError = (error) => {
   console.log(error);
 
   if (error.code === 1) {
-    document.querySelector("p#statusText").innerText =
+    document.querySelector("p#status_text").innerText =
       "This won't work until you allow the website to access your location.";
   }
 };
