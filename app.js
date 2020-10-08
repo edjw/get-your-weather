@@ -1,6 +1,16 @@
 const express = require("express");
 const nunjucks = require("nunjucks");
+const helmet = require("helmet");
 const app = express();
+app.use(helmet());
+// app.use(
+//   helmet.contentSecurityPolicy({
+//     directives: {
+//       "default-src": ["'self'"],
+//       scriptSrc: ["'self'", "'unsafe-inline'"],
+//     },
+//   })
+// );
 
 nunjucks.configure("views", {
   autoescape: true,

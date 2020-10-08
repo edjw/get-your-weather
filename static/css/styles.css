@@ -21,3 +21,7 @@ main {
 footer {
   grid-area: footer;
 }
+
+img.condition_icon {
+  max-width: 50px;
+}
