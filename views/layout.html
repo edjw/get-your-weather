@@ -7,12 +7,19 @@
     {% block head %}
     <title>Get your weather</title>
     {% endblock %}
+
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 
 <body>
-    <h1><a href="/">Get your weather</a></h1>
-
-    {% block body %}{% endblock %}
+    <header>
+        <h1><a href="/">Get your weather</a></h1>
+    </header>
+    <main>
+        {% block body %}{% endblock %}</main>
+    <footer>
+        <p>A little app to learn some Express and Node by Ed Johnson-Williams</p>
+    </footer>
 
 </body>
 

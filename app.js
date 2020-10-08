@@ -7,6 +7,8 @@ nunjucks.configure("views", {
   express: app,
 });
 
+app.use(express.static("static"));
+
 // Routes
 app.get("/", require("./routes/index.js"));
 app.get("/:lat,:lon", require("./routes/forecast.js"));
