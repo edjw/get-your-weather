@@ -36,11 +36,22 @@ const degToCompass = (num) => {
 // Converts epoch time to HH:MM
 const epochToTodayTime = (epochTime) => {
   const date = new Date(epochTime * 1000);
-  return date.toLocaleTimeString([], {
-    hour12: false,
-    hour: "2-digit",
-    minute: "2-digit",
-  });
+
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+
+  return `${zeroPad(hours)}:${zeroPad(minutes)}`;
+
+  // return date.toLocaleTimeString([], {
+  //   hour12: false,
+  //   hour: "2-digit",
+  //   minute: "2-digit",
+  // });
+};
+
+const zeroPad = (num) => {
+  num < 10 ? (num = "0" + String(num)) : num;
+  return num;
 };
 
 router.get("/:lat,:lon", async (req, res) => {
